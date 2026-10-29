@@ -100,7 +100,7 @@ jobs:
             <text x="458.4" y="193" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Languages.me: </tspan><tspan fill="{value}">English, Hindi</tspan></text>'''
               svg = svg[:lang.start()] + language_rows + svg[lang.end():]
 
-              github_row = re.search(r'<text x="458[.]4" y="253"[^>]*>.*?</text>', svg)
+              github_row = re.search(r'<text x="458[.]4" y="273"[^>]*>.*?</text>', svg)
               if not github_row:
                   raise SystemExit(f"GitHub contact row not found in {filename}")
               contact_rows = f'''  <text x="458.4" y="293" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Email: </tspan><tspan fill="{muted}">........................</tspan><tspan fill="{value}"> shivkumar6990655@gmail.com</tspan></text>
