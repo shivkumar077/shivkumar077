@@ -55,12 +55,12 @@ TOOLS & TECHNOLOGIES
 ## `$ github --stats`
 
 <p>
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=shivkumar077&show_icons=true&hide_border=true&theme=transparent" alt="GitHub account statistics" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=shivkumar077&layout=compact&hide_border=true&theme=transparent" alt="Most used programming languages on GitHub" />
+  <img height="165" src="https://github-stats-extended.vercel.app/api?username=shivkumar077&show_icons=true&hide_border=true&theme=github_dark" alt="GitHub account statistics" />
+  <img height="165" src="https://github-stats-extended.vercel.app/api/top-langs/?username=shivkumar077&layout=compact&hide_border=true&theme=github_dark" alt="Most used programming languages on GitHub" />
 </p>
 
 <p>
-  <img src="https://streak-stats.demolab.com?user=shivkumar077&hide_border=true&theme=transparent" alt="GitHub contribution streak" />
+  <img src="https://streak-stats.demolab.com?user=shivkumar077&hide_border=true&theme=github_dark" alt="GitHub contribution streak" />
 </p>
 
 ## `$ connect --with shivkumar077`
