@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="320" viewBox="0 0 1000 320" role="img" aria-labelledby="title desc">
+  <title id="title">Project constellation — Shiv Kumar</title>
+  <desc id="desc">An animated cyberpunk star map connecting four engineering projects around a central developer core.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080c17"/><stop offset=".55" stop-color="#11132a"/><stop offset="1" stop-color="#06171b"/></linearGradient>
+    <linearGradient id="wire" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#42f5e9" stop-opacity=".7"/><stop offset=".5" stop-color="#ff4ecd" stop-opacity=".6"/><stop offset="1" stop-color="#a78bfa" stop-opacity=".7"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#42f5e9" stop-opacity=".18"/><stop offset="1" stop-color="#42f5e9" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#657a9c" stroke-opacity=".1"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="clip"><rect width="1000" height="320" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="1000" height="320" rx="14" fill="url(#bg)"/><rect width="1000" height="320" fill="url(#grid)"/>
+    <rect x="1" y="1" width="998" height="318" rx="14" fill="none" stroke="#42f5e9" stroke-opacity=".5"/>
+    <text x="24" y="28" fill="#42f5e9" font-family="monospace" font-size="10" letter-spacing="2">PROJECT CONSTELLATION / NAVIGATE TO EXPLORE</text>
+    <text x="976" y="28" text-anchor="end" fill="#7386a3" font-family="monospace" font-size="9">4 SIGNALS DETECTED</text>
+    <circle cx="500" cy="166" r="138" fill="url(#halo)"/>
+    <g fill="none" stroke="url(#wire)" stroke-width="1.5" stroke-dasharray="6 7">
+      <path d="M500 166 L205 104"><animate attributeName="stroke-dashoffset" values="0;-52" dur="4s" repeatCount="indefinite"/></path>
+      <path d="M500 166 L795 104"><animate attributeName="stroke-dashoffset" values="0;52" dur="4.5s" repeatCount="indefinite"/></path>
+      <path d="M500 166 L205 244"><animate attributeName="stroke-dashoffset" values="0;-52" dur="5s" repeatCount="indefinite"/></path>
+      <path d="M500 166 L795 244"><animate attributeName="stroke-dashoffset" values="0;52" dur="5.5s" repeatCount="indefinite"/></path>
+    </g>
+    <g filter="url(#glow)">
+      <circle cx="500" cy="166" r="42" fill="#0a1726" stroke="#42f5e9" stroke-width="1.5"/>
+      <circle cx="500" cy="166" r="32" fill="none" stroke="#ff4ecd" stroke-opacity=".7" stroke-dasharray="3 5"><animateTransform attributeName="transform" type="rotate" from="0 500 166" to="360 500 166" dur="18s" repeatCount="indefinite"/></circle>
+      <path d="M500 141 L510 162 L500 157 L490 162 Z M500 191 L490 170 L500 175 L510 170 Z" fill="#42f5e9"/>
+      <circle cx="500" cy="166" r="5" fill="#fff"><animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/></circle>
+    </g>
+    <text x="500" y="222" fill="#42f5e9" text-anchor="middle" font-family="monospace" font-size="9" letter-spacing="1">DEV CORE</text>
+    <g font-family="monospace">
+      <rect x="34" y="57" width="342" height="85" rx="9" fill="#0a1220" stroke="#42f5e9" stroke-opacity=".65"/>
+      <circle cx="54" cy="77" r="4" fill="#42f5e9"><animate attributeName="opacity" values="1;.2;1" dur="1.4s" repeatCount="indefinite"/></circle>
+      <text x="68" y="81" fill="#42f5e9" font-size="9" letter-spacing="1.5">01 / TRADING SYSTEMS</text>
+      <text x="52" y="106" fill="#f1f5ff" font-size="18" font-weight="700">SHADOW EXCHANGE</text>
+      <text x="52" y="125" fill="#879ab8" font-size="10">Order flow · backend architecture · live demo ↗</text>
+      <rect x="624" y="57" width="342" height="85" rx="9" fill="#0a1220" stroke="#ff4ecd" stroke-opacity=".65"/>
+      <circle cx="644" cy="77" r="4" fill="#ff4ecd"><animate attributeName="opacity" values=".2;1;.2" dur="1.7s" repeatCount="indefinite"/></circle>
+      <text x="658" y="81" fill="#ff4ecd" font-size="9" letter-spacing="1.5">02 / EXPERIMENTAL SYSTEMS</text>
+      <text x="642" y="106" fill="#f1f5ff" font-size="18" font-weight="700">ASTRA</text>
+      <text x="642" y="125" fill="#879ab8" font-size="10">Product engineering · experiments · repository ↗</text>
+      <rect x="34" y="201" width="342" height="85" rx="9" fill="#0a1220" stroke="#a78bfa" stroke-opacity=".7"/>
+      <circle cx="54" cy="221" r="4" fill="#a78bfa"><animate attributeName="opacity" values="1;.25;1" dur="2.1s" repeatCount="indefinite"/></circle>
+      <text x="68" y="225" fill="#a78bfa" font-size="9" letter-spacing="1.5">03 / INTERACTIVE WORLDS</text>
+      <text x="52" y="250" fill="#f1f5ff" font-size="18" font-weight="700">ECHO</text>
+      <text x="52" y="269" fill="#879ab8" font-size="10">Simulation · living-world concept · repository ↗</text>
+      <rect x="624" y="201" width="342" height="85" rx="9" fill="#0a1220" stroke="#42f5e9" stroke-opacity=".4"/>
+      <circle cx="644" cy="221" r="4" fill="#42f5e9"><animate attributeName="opacity" values=".2;1;.2" dur="1.8s" repeatCount="indefinite"/></circle>
+      <text x="658" y="225" fill="#42f5e9" font-size="9" letter-spacing="1.5">04 / PERSONAL INTERFACE</text>
+      <text x="642" y="250" fill="#f1f5ff" font-size="18" font-weight="700">PORTFOLIO</text>
+      <text x="642" y="269" fill="#879ab8" font-size="10">Web design · personal launchpad · open site ↗</text>
+    </g>
+    <g fill="#42f5e9" filter="url(#glow)">
+      <circle r="3"><animateMotion dur="5s" repeatCount="indefinite" path="M205 104 L500 166"/></circle>
+      <circle r="3" fill="#ff4ecd"><animateMotion dur="5.5s" repeatCount="indefinite" path="M795 104 L500 166"/></circle>
+      <circle r="3" fill="#a78bfa"><animateMotion dur="5.8s" repeatCount="indefinite" path="M205 244 L500 166"/></circle>
+      <circle r="3"><animateMotion dur="6.2s" repeatCount="indefinite" path="M795 244 L500 166"/></circle>
+    </g>
+  </g>
+</svg>
