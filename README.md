@@ -1,6 +1,8 @@
-<p align="center">
-  <img src="./cyberpunk-hero.svg" alt="Shiv Kumar — backend engineering, cloud, and AI" width="100%" />
-</p>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="light_mode.svg" />
+  <img alt="shivkumar077's GitHub profile in ASCII" src="dark_mode.svg" width="100%" />
+</picture>
 
 <p align="center">
   <a href="https://shivkumar-pi.vercel.app/"><strong>PORTFOLIO</strong></a>
