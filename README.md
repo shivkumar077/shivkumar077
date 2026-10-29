@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://gh-ascii.vercel.app/shivkumar077?theme=dark" />
-  <source media="(prefers-color-scheme: light)" srcset="https://gh-ascii.vercel.app/shivkumar077?theme=light" />
-  <img alt="shivkumar077's GitHub profile in ASCII" src="https://gh-ascii.vercel.app/shivkumar077?theme=dark" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="dark_mode.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="light_mode.svg" />
+  <img alt="shivkumar077's GitHub profile in ASCII" src="dark_mode.svg" width="100%" />
 </picture>
 
 <div align="center">
