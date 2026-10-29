@@ -144,22 +144,22 @@ jobs:
               commits = f"{int(os.environ['TOTAL_COMMITS']):,}"
               contributions = f"{int(os.environ['TOTAL_CONTRIBUTIONS']):,}"
 
-              commit_row = re.search(r'<text x="458[.]4" y="453"[^>]*>.*?\\. Commits:.*?</text>', svg)
+              commit_row = re.search(r'<text x="458[.]4" y="453"[^>]*>.*?\. Commits:.*?</text>', svg)
               if not commit_row:
                   raise SystemExit(f"Commit stats row not found in {filename}")
               updated_commit_row = re.sub(
-                  r'(<tspan fill="[^"]+">)\\s*\\d+(</tspan><tspan fill="[^"]+"> \\| </tspan><tspan fill="[^"]+">\\. Contributed:)',
+                  r'(<tspan fill="[^"]+">)\s*\d+(</tspan><tspan fill="[^"]+"> \| </tspan><tspan fill="[^"]+">\. Contributed:)',
                   lambda m: m.group(1) + " " + commits + m.group(2),
                   commit_row.group(0),
                   count=1
               )
               svg = svg[:commit_row.start()] + updated_commit_row + svg[commit_row.end():]
 
-              contribution_row = re.search(r'<text x="458[.]4" y="573"[^>]*>.*?\\. Contributions:.*?</text>', svg)
+              contribution_row = re.search(r'<text x="458[.]4" y="573"[^>]*>.*?\. Contributions:.*?</text>', svg)
               if not contribution_row:
                   raise SystemExit(f"Contribution stats row not found in {filename}")
               updated_contribution_row = re.sub(
-                  r'(<tspan fill="[^"]+">)\\s*\\d+(</tspan><tspan fill="[^"]+"> \\| </tspan><tspan fill="[^"]+">\\. Reviews:)',
+                  r'(<tspan fill="[^"]+">)\s*\d+(</tspan><tspan fill="[^"]+"> \| </tspan><tspan fill="[^"]+">\. Reviews:)',
                   lambda m: m.group(1) + " " + contributions + m.group(2),
                   contribution_row.group(0),
                   count=1
