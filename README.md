@@ -32,10 +32,10 @@
 
 I'm a computer science student interested in the engineering behind reliable software: backend services, APIs, cloud infrastructure, and AI-powered systems. I like projects that force me to think beyond the happy path and understand how the pieces fit together.
 
-## `$ dashboard --live`
+## `$ enter_the_neon_city`
 
 <p align="center">
-  <img src="./developer-telemetry.svg" alt="Animated cyberpunk developer dashboard with a pulsing system core, engineering focus modules, and project status signals" width="100%" />
+  <img src="./neon-cityscape.svg" alt="Cinematic animated neon city at night with glowing skyscrapers, a cyan-magenta moon, and the message Dream in systems. Ship the impossible." width="100%" />
 </p>
 
 <p align="center">
@@ -43,7 +43,7 @@ I'm a computer science student interested in the engineering behind reliable sof
 </p>
 
 <p align="center">
-  <img src="./project-constellation.svg" alt="Animated project constellation linking Shadow Exchange, ASTRA, ECHO, and the portfolio to the developer core" width="100%" />
+  <img src="./project-constellation.svg" alt="Animated project constellation linking Shadow Exchange, ASTRA, ECHO, and the portfolio" width="100%" />
 </p>
 
 <p align="center">
