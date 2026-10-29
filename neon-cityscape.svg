@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="310" viewBox="0 0 1000 310" role="img" aria-labelledby="title desc">
+  <title id="title">Neon after-hours — Shiv Kumar</title>
+  <desc id="desc">A cinematic animated cyberpunk city at night, with glowing skyscrapers, drifting light trails, stars, and a magenta-cyan moon.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#080b18"/><stop offset=".6" stop-color="#17112b"/><stop offset="1" stop-color="#09252e"/></linearGradient>
+    <linearGradient id="moon" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ff4ecd"/><stop offset="1" stop-color="#42f5e9"/></linearGradient>
+    <linearGradient id="shine" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#42f5e9" stop-opacity="0"/><stop offset=".5" stop-color="#42f5e9"/><stop offset="1" stop-color="#42f5e9" stop-opacity="0"/></linearGradient>
+    <pattern id="windows" width="18" height="19" patternUnits="userSpaceOnUse"><rect x="4" y="5" width="5" height="7" fill="#42f5e9" opacity=".55"/><rect x="12" y="5" width="3" height="7" fill="#ff4ecd" opacity=".4"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="clip"><rect x="1" y="1" width="998" height="308" rx="15"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="1000" height="310" rx="15" fill="url(#sky)"/>
+    <circle cx="760" cy="94" r="80" fill="#ff4ecd" opacity=".08"><animate attributeName="r" values="75;90;75" dur="8s" repeatCount="indefinite"/></circle>
+    <circle cx="760" cy="94" r="54" fill="url(#moon)" opacity=".9" filter="url(#glow)"/>
+    <path d="M700 94H820 M706 110H814 M720 126H800" stroke="#101027" stroke-width="4" opacity=".8"/>
+    <g fill="#e6f7ff">
+      <circle cx="72" cy="45" r="1.5"/><circle cx="144" cy="77" r="1"/><circle cx="230" cy="36" r="1.4"/><circle cx="334" cy="67" r="1"/><circle cx="426" cy="30" r="1.4"/><circle cx="525" cy="51" r="1"/><circle cx="620" cy="31" r="1.4"/><circle cx="883" cy="43" r="1.4"/><circle cx="941" cy="78" r="1"/>
+      <circle cx="72" cy="45" r="1.5"><animate attributeName="opacity" values=".2;1;.2" dur="2s" repeatCount="indefinite"/></circle>
+      <circle cx="426" cy="30" r="1.4"><animate attributeName="opacity" values="1;.2;1" dur="2.7s" repeatCount="indefinite"/></circle>
+      <circle cx="883" cy="43" r="1.4"><animate attributeName="opacity" values=".2;1;.2" dur="3s" repeatCount="indefinite"/></circle>
+    </g>
+    <g fill="#0a1424" stroke="#24364d" stroke-width="1">
+      <path d="M0 202V143H54V168H80V116H122V202Z"/><path d="M114 202V151H151V125H178V202Z"/>
+      <path d="M200 202V109H226V91H249V109H268V202Z"/><path d="M270 202V147H309V124H343V202Z"/>
+      <path d="M350 202V131H387V101H408V131H427V202Z"/><path d="M430 202V155H471V118H498V155H524V202Z"/>
+      <path d="M520 202V125H551V98H572V125H593V202Z"/><path d="M594 202V151H631V128H661V202Z"/>
+      <path d="M654 202V132H682V105H707V132H724V202Z"/><path d="M728 202V149H765V118H798V202Z"/>
+      <path d="M796 202V135H834V110H858V135H884V202Z"/><path d="M878 202V154H916V125H950V202Z"/><path d="M946 202V167H979V202Z"/>
+    </g>
+    <g opacity=".8">
+      <path d="M0 143H54V168H80V116H122V202H0Z" fill="url(#windows)"/>
+      <path d="M200 202V109H226V91H249V109H268V202Z" fill="url(#windows)"/>
+      <path d="M350 202V131H387V101H408V131H427V202Z" fill="url(#windows)"/>
+      <path d="M520 202V125H551V98H572V125H593V202Z" fill="url(#windows)"/>
+      <path d="M654 202V132H682V105H707V132H724V202Z" fill="url(#windows)"/>
+      <path d="M796 202V135H834V110H858V135H884V202Z" fill="url(#windows)"/>
+    </g>
+    <g fill="none" stroke-linecap="round">
+      <path d="M0 222 Q240 193 480 226 T1000 218" stroke="#42f5e9" stroke-opacity=".65" stroke-width="2" filter="url(#glow)"/>
+      <path d="M0 233 Q250 208 500 236 T1000 228" stroke="#ff4ecd" stroke-opacity=".75" stroke-width="1.5"/>
+      <path d="M0 244 Q260 220 500 247 T1000 239" stroke="#42f5e9" stroke-opacity=".35" stroke-width="1"/>
+      <path d="M-100 229H1100" stroke="url(#shine)" stroke-width="3" stroke-dasharray="130 220"><animate attributeName="stroke-dashoffset" values="0;-700" dur="8s" repeatCount="indefinite"/></path>
+    </g>
+    <rect x="0" y="250" width="1000" height="60" fill="#070b14" opacity=".94"/>
+    <path d="M0 250H1000" stroke="#42f5e9" stroke-opacity=".6"/>
+    <text x="28" y="275" fill="#42f5e9" font-family="monospace" font-size="10" letter-spacing="3">AFTER HOURS / BUILD MODE</text>
+    <text x="28" y="297" fill="#f4f7ff" font-family="monospace" font-size="17" font-weight="700" letter-spacing="1">DREAM IN SYSTEMS. SHIP THE IMPOSSIBLE.</text>
+    <text x="970" y="279" text-anchor="end" fill="#ff4ecd" font-family="monospace" font-size="10">KOLKATA → EVERYWHERE</text>
+    <text x="970" y="297" text-anchor="end" fill="#71839f" font-family="monospace" font-size="9">NIGHT SHIFT // OPERATOR 077</text>
+    <rect x="1" y="1" width="998" height="308" rx="15" fill="none" stroke="#42f5e9" stroke-opacity=".55"/>
+  </g>
+</svg>
