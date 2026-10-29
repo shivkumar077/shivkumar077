@@ -69,7 +69,23 @@ jobs:
               svg = svg.replace('width="1043" height="536" viewBox="0 0 1043 536"', 'width="1043" height="616" viewBox="0 0 1043 616"')
               svg = svg.replace('width="1042" height="535"', 'width="1042" height="615"')
 
-              lang = re.search(r'<text x="458\.4" y="153"[^>]*>.*?</text>', svg)
+              # Move existing rows down to make room for two extra language rows
+              # and one code-line metric, using each row's ORIGINAL y-coordinate.
+              def move_row(match):
+                  y = float(match.group(2))
+                  if y >= 473:
+                      y += 60
+                  elif y >= 193:
+                      y += 40
+                  return match.group(1) + str(y).rstrip("0").rstrip(".") + match.group(3)
+
+              svg = re.sub(
+                  r'(<text x="458\\.4" y=")([0-9.]+)(" font-family=)',
+                  move_row,
+                  svg
+              )
+
+              lang = re.search(r'<text x="458\\.4" y="153"[^>]*>.*?</text>', svg)
               if not lang:
                   raise SystemExit(f"Language row not found in {filename}")
               language_rows = f'''  <text x="458.4" y="153" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Languages.programming: </tspan><tspan fill="{value}">Python, Java, JavaScript, TypeScript</tspan></text>
@@ -77,31 +93,11 @@ jobs:
             <text x="458.4" y="193" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Languages.me: </tspan><tspan fill="{value}">English, Hindi</tspan></text>'''
               svg = svg[:lang.start()] + language_rows + svg[lang.end():]
 
-              svg = re.sub(
-                  r'(<text x="458\.4" y=")([0-9.]+)(" font-family=)',
-                  lambda m: m.group(1) + str(float(m.group(2)) + (40 if float(m.group(2)) >= 193 else 0)).rstrip("0").rstrip(".") + m.group(3),
-                  svg
-              )
-              svg = re.sub(
-                  r'(<text x="458\.4" y=")([0-9.]+)(" font-family=)',
-                  lambda m: m.group(1) + str(float(m.group(2)) + (100 if float(m.group(2)) >= 293 else 0)).rstrip("0").rstrip(".") + m.group(3),
-                  svg
-              )
-
-              github_row = re.search(r'<text x="458\.4" y="253"[^>]*>.*?</text>', svg)
-              if not github_row:
-                  raise SystemExit(f"GitHub contact row not found in {filename}")
-              contact_rows = f'''  <text x="458.4" y="273" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Email: </tspan><tspan fill="{muted}">........................</tspan><tspan fill="{value}"> shivkumar6990655@gmail.com</tspan></text>
-            <text x="458.4" y="293" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. LinkedIn: </tspan><tspan fill="{muted}">..............</tspan><tspan fill="{value}"> linkedin.com/in/shiv-kumar-399a32231</tspan></text>
-            <text x="458.4" y="313" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Instagram: </tspan><tspan fill="{muted}">............</tspan><tspan fill="{value}"> instagram.com/nightcore_077</tspan></text>
-            <text x="458.4" y="333" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. X: </tspan><tspan fill="{muted}">.....................</tspan><tspan fill="{value}"> x.com/nightcore_077</tspan></text>'''
-              svg = svg[:github_row.end()] + "\n" + contact_rows + svg[github_row.end():]
-
-              metric = f'  <text x="458.4" y="513" font-family="\'Consolas\', \'Menlo\', \'DejaVu Sans Mono\', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Code lines: </tspan><tspan fill="{muted}">............</tspan><tspan fill="{metric_color}"> {total}</tspan></text>'
-              top_repo = re.search(r'<text x="458\.4" y="493"[^>]*>.*?</text>', svg)
+              metric = f'  <text x="458.4" y="513" font-family="\\'Consolas\\', \\'Menlo\\', \\'DejaVu Sans Mono\\', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Code lines: </tspan><tspan fill="{muted}">............</tspan><tspan fill="{metric_color}"> {total}</tspan></text>'
+              top_repo = re.search(r'<text x="458\\.4" y="493"[^>]*>.*?</text>', svg)
               if not top_repo:
                   raise SystemExit(f"Top repo row not found in {filename}")
-              svg = svg[:top_repo.end()] + "\n" + metric + svg[top_repo.end():]
+              svg = svg[:top_repo.end()] + "\\n" + metric + svg[top_repo.end():]
               path.write_text(svg)
           PY
 
