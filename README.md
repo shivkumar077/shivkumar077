@@ -136,6 +136,26 @@ EXPLORING       Cloud engineering · AI / ML · System design
 
 ---
 
+<details>
+  <summary><code>sudo reveal --classified</code> &nbsp; <sub>you found the hidden room</sub></summary>
+
+  ```text
+  ACCESS GRANTED // OPERATOR: CURIOUS HUMAN
+
+  The best projects start with:
+  "Wait... what if we tried something ridiculous?"
+
+  Current prime directive:
+  Learn deeply. Build boldly. Stay kind.
+  Keep the weird ideas. Delete the pointless complexity.
+
+  Thanks for exploring the terminal.
+  You have excellent side-quest instincts.
+  ```
+
+  <p><a href="https://shivkumar-pi.vercel.app/">↗ Return to the mainframe</a></p>
+</details>
+
 <p align="center">
   <sub>Built with curiosity, terminal aesthetics, and a healthy amount of late-night debugging.</sub>
 </p>
