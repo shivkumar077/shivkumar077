@@ -32,6 +32,16 @@
 
 I'm a computer science student interested in the engineering behind reliable software: backend services, APIs, cloud infrastructure, and AI-powered systems. I like projects that force me to think beyond the happy path and understand how the pieces fit together.
 
+## `$ dashboard --live`
+
+<p align="center">
+  <img src="./developer-telemetry.svg" alt="Animated cyberpunk developer dashboard with a pulsing system core, engineering focus modules, and project status signals" width="100%" />
+</p>
+
+<p align="center">
+  <code>BUILD MODE: ALWAYS ON</code> &nbsp; <code>BUGS: TEMPORARY FEATURES</code> &nbsp; <code>COFFEE: OPTIONAL, CURIOSITY: REQUIRED</code>
+</p>
+
 ## `$ ls ~/projects --featured`
 
 <table>
