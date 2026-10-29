@@ -60,7 +60,7 @@ TOOLS & TECHNOLOGIES
 </p>
 
 <p>
-  <img src="https://streak-stats.demolab.com?user=shivkumar077&hide_border=true&theme=github_dark" alt="GitHub contribution streak" />
+  <img src="./streak.svg" alt="GitHub contribution streak" />
 </p>
 
 ## `$ connect --with shiv
