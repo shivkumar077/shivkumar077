@@ -63,14 +63,14 @@ TOOLS & TECHNOLOGIES
   <img src="https://streak-stats.demolab.com?user=shivkumar077&hide_border=true&theme=github_dark" alt="GitHub contribution streak" />
 </p>
 
-## `$ connect --with shivkumar077`
+## `$ connect --with shiv
 
 ```text
 ┌─ CONTACT ─────────────────────────────────────────────────────┐
-│ Email     : shivkumar6990655@gmail.com                         │
-│ LinkedIn  : linkedin.com/in/shiv-kumar-399a32231               │
-│ Instagram : instagram.com/nightcore_077                         │
-│ X         : x.com/nightcore_077                                 │
+│ Email     : shivkumar6990655@gmail.com                        │
+│ LinkedIn  : linkedin.com/in/shiv-kumar-399a32231              │
+│ Instagram : instagram.com/nightcore_077                       │
+│ X         : x.com/nightcore_077                               │
 └───────────────────────────────────────────────────────────────┘
 ```
 
