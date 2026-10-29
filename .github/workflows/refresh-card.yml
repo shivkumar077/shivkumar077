@@ -25,6 +25,34 @@ jobs:
           grep -q "<svg" dark_mode.svg
           grep -q "<svg" light_mode.svg
 
+      - name: Add custom contact rows to both cards
+        run: |
+          python - <<'PY'
+          import re
+          from pathlib import Path
+
+          rows = """  <text x="458.4" y="233" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="#ffa657">. Email: </tspan><tspan fill="#484f58">........................</tspan><tspan fill="#c9d1d9"> shivkumar6990655@gmail.com</tspan></text>
+            <text x="458.4" y="253" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="#ffa657">. LinkedIn: </tspan><tspan fill="#484f58">..............</tspan><tspan fill="#c9d1d9"> linkedin.com/in/shiv-kumar-399a32231</tspan></text>
+            <text x="458.4" y="273" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="#ffa657">. Instagram: </tspan><tspan fill="#484f58">............</tspan><tspan fill="#c9d1d9"> instagram.com/nightcore_077</tspan></text>
+            <text x="458.4" y="293" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="#ffa657">. X: </tspan><tspan fill="#484f58">.....................</tspan><tspan fill="#c9d1d9"> x.com/nightcore_077</tspan></text>"""
+
+          for filename in ("dark_mode.svg", "light_mode.svg"):
+              path = Path(filename)
+              svg = path.read_text()
+              svg = svg.replace('width="1043" height="536" viewBox="0 0 1043 536"', 'width="1043" height="576" viewBox="0 0 1043 576"')
+              svg = svg.replace('width="1042" height="535"', 'width="1042" height="575"')
+              svg = re.sub(
+                  r'(<text x="458\\.4" y=")([0-9.]+)(" font-family=)',
+                  lambda m: m.group(1) + str(float(m.group(2)) + 100 if float(m.group(2)) >= 253 else float(m.group(2))).rstrip("0").rstrip(".") + m.group(3),
+                  svg
+              )
+              contact_row = re.search(r'<text x="458\\.4" y="213"[^>]*>.*?</text>', svg)
+              if not contact_row:
+                  raise SystemExit(f"Contact row not found in {filename}")
+              svg = svg[:contact_row.end()] + "\\n" + rows + svg[contact_row.end():]
+              path.write_text(svg)
+          PY
+
       - name: Commit generated cards if changed
         run: |
           git config user.name "github-actions[bot]"
