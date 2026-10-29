@@ -20,11 +20,11 @@
 
 ```text
 ┌─ SYSTEM INFORMATION ──────────────────────────────────────────┐
-│ User       : shivkumar077                                      │
-│ Role       : B.Tech CSE — Cloud Computing                      │
-│ Focus      : Backend engineering, cloud systems, AI/ML         │
-│ Currently  : Building projects and sharpening core CS skills   │
-│ IDEs       : VS Code, IntelliJ IDEA                             │
+│ User       : shivkumar077                                     │
+│ Role       : B.Tech CSE — Cloud Computing                     │
+│ Focus      : Backend engineering, cloud systems, AI/ML        │
+│ Currently  : Building projects and sharpening core CS skills  │
+│ IDEs       : VS Code, IntelliJ IDEA                           │
 └───────────────────────────────────────────────────────────────┘
 ```
 
