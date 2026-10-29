@@ -29,7 +29,7 @@
       <text x="16" y="24" fill="#FF62D6" font-family="monospace" font-size="11">SYSTEM READOUT</text>
       <text x="16" y="51" fill="#7F98AE" font-family="monospace" font-size="11">FOCUS</text><text x="94" y="51" fill="#E4F2FF" font-family="monospace" font-size="11">BACKEND / CLOUD</text>
       <text x="16" y="76" fill="#7F98AE" font-family="monospace" font-size="11">STACK</text><text x="94" y="76" fill="#E4F2FF" font-family="monospace" font-size="11">JAVA · PYTHON</text>
-      <text x="16" y="101" fill="#7F98AE" font-family="monospace" font-size="11">MODE</text><text x="94" y="101" fill="#5EF2FF" font-family="monospace" font-size="11">BUILDING</text>
+      <text x="16" y="101" fill="#7F98AE" font-family="monospace" font-size="11">MODE</text><text x="94" y="101" fill="#5EF2FF" font-family="monospace" font-size="11">ACTIVE</text>
       <rect x="16" y="113" width="210" height="2" fill="#20384B"/><rect x="16" y="113" width="145" height="2" fill="#5EF2FF"><animate attributeName="width" values="105;195;145" dur="4s" repeatCount="indefinite"/></rect>
     </g>
     <text x="715" y="225" fill="#607A91" font-family="monospace" font-size="10">ROOT ACCESS: CURIOSITY</text>
