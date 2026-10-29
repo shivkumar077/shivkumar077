@@ -80,12 +80,12 @@ jobs:
                   return match.group(1) + str(y).rstrip("0").rstrip(".") + match.group(3)
 
               svg = re.sub(
-                  r'(<text x="458\\.4" y=")([0-9.]+)(" font-family=)',
+                  r'(<text x="458[.]4" y=")([0-9.]+)(" font-family=)',
                   move_row,
                   svg
               )
 
-              lang = re.search(r'<text x="458\\.4" y="153"[^>]*>.*?</text>', svg)
+              lang = re.search(r'<text x="458[.]4" y="153"[^>]*>.*?</text>', svg)
               if not lang:
                   raise SystemExit(f"Language row not found in {filename}")
               language_rows = f'''  <text x="458.4" y="153" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Languages.programming: </tspan><tspan fill="{value}">Python, Java, JavaScript, TypeScript</tspan></text>
@@ -93,11 +93,11 @@ jobs:
             <text x="458.4" y="193" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Languages.me: </tspan><tspan fill="{value}">English, Hindi</tspan></text>'''
               svg = svg[:lang.start()] + language_rows + svg[lang.end():]
 
-              metric = f'  <text x="458.4" y="513" font-family="\\'Consolas\\', \\'Menlo\\', \\'DejaVu Sans Mono\\', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Code lines: </tspan><tspan fill="{muted}">............</tspan><tspan fill="{metric_color}"> {total}</tspan></text>'
-              top_repo = re.search(r'<text x="458\\.4" y="493"[^>]*>.*?</text>', svg)
+              metric = f"""  <text x="458.4" y="513" font-family="'Consolas', 'Menlo', 'DejaVu Sans Mono', monospace" xml:space="preserve" font-size="16"><tspan fill="{label}">. Code lines: </tspan><tspan fill="{muted}">............</tspan><tspan fill="{metric_color}"> {total}</tspan></text>"""
+              top_repo = re.search(r'<text x="458[.]4" y="493"[^>]*>.*?</text>', svg)
               if not top_repo:
                   raise SystemExit(f"Top repo row not found in {filename}")
-              svg = svg[:top_repo.end()] + "\\n" + metric + svg[top_repo.end():]
+              svg = svg[:top_repo.end()] + "\n" + metric + svg[top_repo.end():]
               path.write_text(svg)
           PY
 
