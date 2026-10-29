@@ -1,0 +1,38 @@
+name: Generate ASCII profile card
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/refresh-card.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@v4
+
+      - name: Download dark and light SVG cards
+        run: |
+          set -euo pipefail
+          curl -fL --retry 3 "https://gh-ascii.vercel.app/shivkumar077?theme=dark" -o dark_mode.svg
+          curl -fL --retry 3 "https://gh-ascii.vercel.app/shivkumar077?theme=light" -o light_mode.svg
+          grep -q "<svg" dark_mode.svg
+          grep -q "<svg" light_mode.svg
+
+      - name: Commit generated cards if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dark_mode.svg light_mode.svg
+          if git diff --cached --quiet; then
+            echo "Cards are unchanged."
+          else
+            git commit -m "feat: add generated ASCII profile cards"
+            git push
+          fi
