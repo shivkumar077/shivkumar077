@@ -73,7 +73,9 @@ jobs:
               # and one code-line metric, using each row's ORIGINAL y-coordinate.
               def move_row(match):
                   y = float(match.group(2))
-                  if y >= 473:
+                  if y >= 453:
+                      y += 80
+                  elif y >= 333:
                       y += 60
                   elif y >= 193:
                       y += 40
