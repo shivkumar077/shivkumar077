@@ -7,7 +7,7 @@ on:
       - ".github/workflows/refresh-card.yml"
   workflow_dispatch:
   schedule:
-    - cron: "17 4 * * 1"
+    - cron: "17 4 * * *"
 
 permissions:
   contents: write
@@ -42,6 +42,31 @@ jobs:
           echo "TOTAL_CODE_LINES=$total" >> "$GITHUB_ENV"
           echo "Total code lines across public, non-fork repositories: $total"
 
+      - name: Fetch live GitHub contribution stats
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          current_year="$(date -u +%Y)"
+          created_year="$(gh api users/shivkumar077 --jq '.created_at' | cut -c1-4)"
+          total_commits=0
+          for year in $(seq "$created_year" "$current_year"); do
+            if [ "$year" -eq "$current_year" ]; then
+              year_end="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            else
+              year_end="${year}-12-31T23:59:59Z"
+            fi
+            query="query { user(login: \"shivkumar077\") { contributionsCollection(from: \"${year}-01-01T00:00:00Z\", to: \"${year_end}\") { totalCommitContributions } } }"
+            count="$(gh api graphql -f query="$query" --jq '.data.user.contributionsCollection.totalCommitContributions')"
+            total_commits=$((total_commits + count))
+          done
+          contribution_query='query { user(login: "shivkumar077") { contributionsCollection { contributionCalendar { totalContributions } } } }'
+          total_contributions="$(gh api graphql -f query="$contribution_query" --jq '.data.user.contributionsCollection.contributionCalendar.totalContributions')"
+          echo "TOTAL_COMMITS=$total_commits" >> "$GITHUB_ENV"
+          echo "TOTAL_CONTRIBUTIONS=$total_contributions" >> "$GITHUB_ENV"
+          echo "GitHub-attributed commits (all years): $total_commits"
+          echo "Contributions in the last 12 months: $total_contributions"
+
       - name: Download dark and light SVG cards
         run: |
           set -euo pipefail
@@ -53,6 +78,8 @@ jobs:
       - name: Add language, contact, and code-line details
         env:
           TOTAL_CODE_LINES: ${{ env.TOTAL_CODE_LINES }}
+          TOTAL_COMMITS: ${{ env.TOTAL_COMMITS }}
+          TOTAL_CONTRIBUTIONS: ${{ env.TOTAL_CONTRIBUTIONS }}
         run: |
           python - <<'PY'
           import os, re
@@ -114,14 +141,45 @@ jobs:
               if not top_repo:
                   raise SystemExit(f"Top repo row not found in {filename}")
               svg = svg[:top_repo.end()] + "\n" + metric + svg[top_repo.end():]
+              commits = f"{int(os.environ['TOTAL_COMMITS']):,}"
+              contributions = f"{int(os.environ['TOTAL_CONTRIBUTIONS']):,}"
+
+              commit_row = re.search(r'<text x="458[.]4" y="453"[^>]*>.*?\\. Commits:.*?</text>', svg)
+              if not commit_row:
+                  raise SystemExit(f"Commit stats row not found in {filename}")
+              updated_commit_row = re.sub(
+                  r'(<tspan fill="[^"]+">)\\s*\\d+(</tspan><tspan fill="[^"]+"> \\| </tspan><tspan fill="[^"]+">\\. Contributed:)',
+                  lambda m: m.group(1) + " " + commits + m.group(2),
+                  commit_row.group(0),
+                  count=1
+              )
+              svg = svg[:commit_row.start()] + updated_commit_row + svg[commit_row.end():]
+
+              contribution_row = re.search(r'<text x="458[.]4" y="573"[^>]*>.*?\\. Contributions:.*?</text>', svg)
+              if not contribution_row:
+                  raise SystemExit(f"Contribution stats row not found in {filename}")
+              updated_contribution_row = re.sub(
+                  r'(<tspan fill="[^"]+">)\\s*\\d+(</tspan><tspan fill="[^"]+"> \\| </tspan><tspan fill="[^"]+">\\. Reviews:)',
+                  lambda m: m.group(1) + " " + contributions + m.group(2),
+                  contribution_row.group(0),
+                  count=1
+              )
+              svg = svg[:contribution_row.start()] + updated_contribution_row + svg[contribution_row.end():]
+
               path.write_text(svg)
           PY
+
+      - name: Generate streak stats SVG
+        uses: DenverCoder1/github-readme-streak-stats@v1
+        with:
+          options: user=shivkumar077&theme=github-dark&hide_border=true&disable_animations=true&timezone=Asia/Kolkata
+          path: streak.svg
 
       - name: Commit generated cards if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add dark_mode.svg light_mode.svg
+          git add dark_mode.svg light_mode.svg streak.svg
           if git diff --cached --quiet; then
             echo "Cards are unchanged."
           else
