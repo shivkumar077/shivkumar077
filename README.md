@@ -32,8 +32,6 @@
 
 I'm a computer science student interested in the engineering behind reliable software: backend services, APIs, cloud infrastructure, and AI-powered systems. I like projects that force me to think beyond the happy path and understand how the pieces fit together.
 
-## `$ enter_the_neon_city`
-
 <p align="center">
   <img src="./neon-cityscape.svg" alt="Cinematic animated neon city at night with glowing skyscrapers, a cyan-magenta moon, and the message Dream in systems. Ship the impossible." width="100%" />
 </p>
