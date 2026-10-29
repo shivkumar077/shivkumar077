@@ -39,6 +39,21 @@ I'm a computer science student interested in the engineering behind reliable sof
 </p>
 
 <p align="center">
+  <img src="./signal-transmission.svg" alt="Animated neon transmission with a developer message and signal waveform" width="100%" />
+</p>
+
+<p align="center">
+  <img src="./project-constellation.svg" alt="Animated project constellation linking Shadow Exchange, ASTRA, ECHO, and the portfolio to the developer core" width="100%" />
+</p>
+
+<p align="center">
+  <a href="https://shadow-exchange-live.vercel.app/">↗ SHADOW EXCHANGE</a> &nbsp; // &nbsp;
+  <a href="https://github.com/shivkumar077/Astra">↗ ASTRA</a> &nbsp; // &nbsp;
+  <a href="https://github.com/shivkumar077/ECHO">↗ ECHO</a> &nbsp; // &nbsp;
+  <a href="https://shivkumar-pi.vercel.app/">↗ PORTFOLIO</a>
+</p>
+
+<p align="center">
   <code>BUILD MODE: ALWAYS ON</code> &nbsp; <code>BUGS: TEMPORARY FEATURES</code> &nbsp; <code>COFFEE: OPTIONAL, CURIOSITY: REQUIRED</code>
 </p>
 
