@@ -65,9 +65,21 @@ TOOLS & TECHNOLOGIES
 
 ## `$ connect --with shivkumar077`
 
-- **Portfolio:** https://shivkumar-pi.vercel.app/
-- **GitHub:** https://github.com/shivkumar077
-- **LinkedIn:** Find me via my portfolio.
+```text
+┌─ CONTACT ─────────────────────────────────────────────────────┐
+│ Email     : shivkumar6990655@gmail.com                         │
+│ LinkedIn  : linkedin.com/in/shiv-kumar-399a32231               │
+│ Instagram : instagram.com/nightcore_077                         │
+│ X         : x.com/nightcore_077                                 │
+└───────────────────────────────────────────────────────────────┘
+```
+
+- **Email:** [shivkumar6990655@gmail.com](mailto:shivkumar6990655@gmail.com)
+- **LinkedIn:** [linkedin.com/in/shiv-kumar-399a32231](https://www.linkedin.com/in/shiv-kumar-399a32231/)
+- **Instagram:** [@nightcore_077](https://www.instagram.com/nightcore_077/)
+- **X:** [@nightcore_077](https://x.com/nightcore_077)
+- **Portfolio:** [shivkumar-pi.vercel.app](https://shivkumar-pi.vercel.app/)
+- **GitHub:** [github.com/shivkumar077](https://github.com/shivkumar077)
 
 ---
 
