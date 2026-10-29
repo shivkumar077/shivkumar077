@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://ascii-readme-gamma.vercel.app/shivkumar077?theme=dark&accent=58a6ff&hobbies=backend+engineering%2C+cloud+computing%2C+AI%2FML%2C+building+projects&github=shivkumar077" />
-  <source media="(prefers-color-scheme: light)" srcset="https://ascii-readme-gamma.vercel.app/shivkumar077?theme=light&accent=58a6ff&hobbies=backend+engineering%2C+cloud+computing%2C+AI%2FML%2C+building+projects&github=shivkumar077" />
-  <img alt="shivkumar077's GitHub profile in ASCII" src="https://ascii-readme-gamma.vercel.app/shivkumar077?theme=dark&accent=58a6ff&hobbies=backend+engineering%2C+cloud+computing%2C+AI%2FML%2C+building+projects&github=shivkumar077" width="100%" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://gh-ascii.vercel.app/shivkumar077?theme=dark" />
+  <source media="(prefers-color-scheme: light)" srcset="https://gh-ascii.vercel.app/shivkumar077?theme=light" />
+  <img alt="shivkumar077's GitHub profile in ASCII" src="https://gh-ascii.vercel.app/shivkumar077?theme=dark" width="100%" />
 </picture>
 
 <div align="center">
