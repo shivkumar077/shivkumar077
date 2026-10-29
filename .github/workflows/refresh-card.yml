@@ -73,15 +73,15 @@ jobs:
               def place_row(match):
                   row = match.group(0)
                   placements = [
-                      ("─ Contact", 233),
+                      ("Contact", 233),
                       (". GitHub:", 253),
-                      ("─ GitHub Stats", 373),
+                      ("GitHub Stats", 373),
                       (". Repos:", 393),
                       (". Forks:", 413),
                       (". Commits:", 433),
                       (". PRs:", 453),
                       (". Top repo:", 473),
-                      ("─ Last 12 Months", 533),
+                      ("Last 12 Months", 533),
                       (". Contributions:", 553),
                       ("▃", 573),
                   ]
