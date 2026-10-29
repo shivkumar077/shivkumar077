@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="270" viewBox="0 0 1000 270" role="img" aria-labelledby="title desc">
+  <title id="title">NEON SYSTEMS — Shiv Kumar</title>
+  <desc id="desc">A cyberpunk terminal identity card for a backend, cloud, and AI developer.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#070B13"/><stop offset="1" stop-color="#11152A"/></linearGradient>
+    <linearGradient id="edge"><stop stop-color="#5EF2FF"/><stop offset=".55" stop-color="#9B7BFF"/><stop offset="1" stop-color="#FF62D6"/></linearGradient>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#163247" stroke-width=".7" opacity=".55"/></pattern>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="clip"><rect x="1" y="1" width="998" height="268" rx="15"/></clipPath>
+  </defs>
+  <g clip-path="url(#clip)">
+    <rect width="1000" height="270" fill="url(#bg)"/><rect width="1000" height="270" fill="url(#grid)"/>
+    <path d="M0 219H1000" stroke="#1A3346"/><path d="M0 0H1000V270H0Z" fill="none" stroke="url(#edge)" stroke-width="2"/>
+    <rect x="1" y="1" width="998" height="38" fill="#0D1522" opacity=".95"/>
+    <circle cx="23" cy="20" r="5" fill="#FF5F57"/><circle cx="41" cy="20" r="5" fill="#FEBC2E"/><circle cx="59" cy="20" r="5" fill="#28C840"/>
+    <text x="82" y="25" fill="#9CB2C9" font-family="monospace" font-size="12">shiv@neon-system ~ /identity</text>
+    <text x="965" y="25" text-anchor="end" fill="#5EF2FF" font-family="monospace" font-size="11">SECURE SESSION</text>
+    <text x="35" y="70" fill="#FF62D6" font-family="monospace" font-size="12" letter-spacing="3">IDENTITY MODULE / 001</text>
+    <text x="32" y="119" fill="#F4F7FF" font-family="monospace" font-weight="700" font-size="43" letter-spacing="1">SHIV KUMAR</text>
+    <rect x="35" y="137" width="6" height="6" fill="#5EF2FF" filter="url(#glow)"/>
+    <text x="51" y="145" fill="#5EF2FF" font-family="monospace" font-size="14" letter-spacing="1.2">BACKEND ENGINEERING  /  CLOUD  /  AI</text>
+    <text x="35" y="177" fill="#A8B8CA" font-family="monospace" font-size="13">Building systems. Exploring architecture.</text>
+    <text x="35" y="197" fill="#A8B8CA" font-family="monospace" font-size="13">Turning ambitious ideas into working software.</text>
+    <text x="35" y="245" fill="#607A91" font-family="monospace" font-size="11">STATUS</text>
+    <circle cx="91" cy="241" r="4" fill="#28C840"><animate attributeName="opacity" values="1;.35;1" dur="2s" repeatCount="indefinite"/></circle>
+    <text x="103" y="245" fill="#C5D6E8" font-family="monospace" font-size="11">BUILDING IN PUBLIC</text>
+    <g transform="translate(715 70)">
+      <rect width="245" height="127" rx="8" fill="#0B1420" stroke="#24465B"/>
+      <text x="16" y="24" fill="#FF62D6" font-family="monospace" font-size="11">SYSTEM READOUT</text>
+      <text x="16" y="51" fill="#7F98AE" font-family="monospace" font-size="11">FOCUS</text><text x="94" y="51" fill="#E4F2FF" font-family="monospace" font-size="11">BACKEND / CLOUD</text>
+      <text x="16" y="76" fill="#7F98AE" font-family="monospace" font-size="11">STACK</text><text x="94" y="76" fill="#E4F2FF" font-family="monospace" font-size="11">JAVA · PYTHON</text>
+      <text x="16" y="101" fill="#7F98AE" font-family="monospace" font-size="11">MODE</text><text x="94" y="101" fill="#5EF2FF" font-family="monospace" font-size="11">EXPERIMENTAL</text>
+      <rect x="16" y="113" width="210" height="2" fill="#20384B"/><rect x="16" y="113" width="145" height="2" fill="#5EF2FF"><animate attributeName="width" values="105;195;145" dur="4s" repeatCount="indefinite"/></rect>
+    </g>
+    <text x="715" y="225" fill="#607A91" font-family="monospace" font-size="10">ROOT ACCESS: CURIOSITY</text>
+    <text x="715" y="245" fill="#5EF2FF" font-family="monospace" font-size="11">$ ship --something-cool</text>
+    <rect x="894" y="233" width="7" height="14" fill="#FF62D6"><animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/></rect>
+    <path d="M0 56H1000" stroke="#5EF2FF" opacity=".18"><animate attributeName="opacity" values=".05;.28;.05" dur="5s" repeatCount="indefinite"/></path>
+  </g>
+</svg>
